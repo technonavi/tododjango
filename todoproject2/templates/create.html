@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action=''method='POST'enctype=''>{% csrf_token %}
+<p>ToDo<input type ='text' name='todo'></p>
+<input type ='submit' value="作成する">
+</form>
+{% endblock content %}

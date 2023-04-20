@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p>TODOリスト</p>
+<table>
+{% for i in object_list %}
+<tr>
+<td> ID:</td>
+<td> {{i.pk}}</td>
+<td> ToDo:</td>
+<td> {{i.todo}}</td>
+<td> 作成日時:</td>
+<td>{{i.created_at}}</td>
+<td> 更新日時:</td>
+<td>{{i.updated_at}}</td>
+
+<td><button type=“button” onclick="location.href='http://127.0.0.1:8000/detail/{{i.pk}}'">詳細</button></td>
+<td><button type=“button” onclick="location.href='http://127.0.0.1:8000/delete/{{i.pk}}'">削除</button></td>
+</tr>
+ {% endfor %}
+</table>
+ <button type=“button” onclick="location.href='http://127.0.0.1:8000/create'">作成</button>
+{% endblock content %}
